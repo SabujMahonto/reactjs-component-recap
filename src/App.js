@@ -1,5 +1,5 @@
 
-import { Component, useState } from 'react';
+import { Component, useEffect, useState } from 'react';
 import './App.css';
 
 // product card style 
@@ -19,12 +19,14 @@ const producStyle = {
 function App() {
   return (
     <div className="App">
+      <ExternalUser></ExternalUser>
       {/* counter  */}
-      <Counter></Counter>
+      {/* <Counter></Counter> */}
+      
 
-      <section className='App'>
           {/* Dynamically product show in the UI using  map  */}
-     {products.map(p => <Product name= {p.name} price={p.price} color={p.color} ></Product>)}
+     {/* {products.map(p => <Product name= {p.name} price={p.price} color={p.color} ></Product>)} */}
+      <section className='App'>
       </section>
 
         
@@ -38,6 +40,23 @@ function App() {
   );
 }
 
+// ExternalUser 
+function ExternalUser(){
+  const [users, setUsers] = useState([]);
+
+  useEffect( ()=>{
+    fetch('https://jsonplaceholder.typicode.com/users')
+    .then(res => res.json())
+    .then(data =>console.log(data))
+
+  },[])
+
+  return(
+  <div>
+    <h1>External User </h1>
+  </div>
+  )
+}
 
 
 
