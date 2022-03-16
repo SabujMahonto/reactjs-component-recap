@@ -1,6 +1,8 @@
 
+import { Component } from 'react';
 import './App.css';
 
+// product card style 
 const producStyle = {
  backgroundColor:'orange',
  margin:'12px',
@@ -18,6 +20,7 @@ function App() {
   return (
     <div className="App">
       {
+        // Dynamically product show in the UI using  map 
        products.map(p => <Product name= {p.name} price={p.price} color={p.color} ></Product>)
        
        }
@@ -33,7 +36,7 @@ function App() {
   );
 }
 
-
+// product list 
 const products = [
   {name:'laptop', price:5000, color:'silver'},
   {name:'Iphone', price:23900, color:'gloden'},
@@ -42,7 +45,7 @@ const products = [
   {name:'Bag-Pack', price:2000, color:'Black'},
   {name:'watch', price: 3999, color: 'gold'}
 ]
-
+// product Component 
 function Product(props){
   return(
     <div style={producStyle}>
