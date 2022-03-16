@@ -1,5 +1,5 @@
 
-import { Component } from 'react';
+import { Component, useState } from 'react';
 import './App.css';
 
 // product card style 
@@ -19,13 +19,15 @@ const producStyle = {
 function App() {
   return (
     <div className="App">
-      {
-        // Dynamically product show in the UI using  map 
-       products.map(p => <Product name= {p.name} price={p.price} color={p.color} ></Product>)
-       
-       }
+      {/* counter  */}
+      <Counter></Counter>
 
+      <section className='App'>
+          {/* Dynamically product show in the UI using  map  */}
+     {products.map(p => <Product name= {p.name} price={p.price} color={p.color} ></Product>)}
+      </section>
 
+        
       {/* <Product name="laptop" price="3333" color="silver" ></Product>
       <Product name="laptop" price="3333" color="silver" ></Product>
       <Product name="laptop" price="3333" color="silver" ></Product>
@@ -35,6 +37,27 @@ function App() {
     </div>
   );
 }
+
+
+
+
+// counter component 
+function Counter(){
+const [count, setCount] = useState(55);
+
+  const increaseCount = () => setCount(count + 1)
+ const decreaseCount = () => setCount(count - 1)
+
+
+  return (
+    <div className='counter'>
+      <h1>Count:{count}</h1>
+      <button onClick={increaseCount}>Increase</button>
+      <button onClick={decreaseCount}>DeIncrease</button>
+    </div>
+  )
+}
+
 
 // product list 
 const products = [

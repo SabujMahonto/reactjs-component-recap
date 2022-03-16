@@ -3,3 +3,7 @@
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 1rem;
 }
+.counter {
+  margin: 10px;
+  background-color: rgb(5, 194, 194);
+}
