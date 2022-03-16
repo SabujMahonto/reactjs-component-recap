@@ -47,15 +47,26 @@ function ExternalUser(){
   useEffect( ()=>{
     fetch('https://jsonplaceholder.typicode.com/users')
     .then(res => res.json())
-    .then(data =>console.log(data))
+    .then(data =>setUsers(data))
 
   },[])
 
   return(
   <div>
     <h1>External User </h1>
+    {/* <p>{users.length}</p> */}
+    {
+      users.map(user =><User name={user.name} Email={user.email} ></User>)
+    }
   </div>
   )
+}
+
+function User(props){
+  return(<div className='info'>
+    <h2>Name:{props.name}</h2>
+    <h3>Email:{props.Email}</h3>
+  </div>)
 }
 
 

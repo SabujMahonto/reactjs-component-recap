@@ -7,3 +7,11 @@
   margin: 10px;
   background-color: rgb(5, 194, 194);
 }
+.info {
+  background-color: crimson;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 20px;
+  border: 2px solid brown;
+  color: wheat;
+}
