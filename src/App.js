@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+
 import './App.css';
 
 const producStyle = {
@@ -35,19 +35,20 @@ function App() {
 
 
 const products = [
-  {name:'laptop', price:23900, color:'silver'},
-  {name:'laptop', price:23900, color:'silver'},
-  {name:'laptop', price:23900, color:'silver'},
-  {name:'laptop', price:23900, color:'silver'},
-  {name:'laptop', price:23900, color:'silver'},
+  {name:'laptop', price:5000, color:'silver'},
+  {name:'Iphone', price:23900, color:'gloden'},
+  {name:'Sunglass', price:200, color:'blue'},
+  {name:'Headphone', price:400, color:'pinky'},
+  {name:'Bag-Pack', price:2000, color:'Black'},
+  {name:'watch', price: 3999, color: 'gold'}
 ]
 
 function Product(props){
   return(
     <div style={producStyle}>
-      <h3>Name:{props.name}</h3>
-      <h4>price:{props.price}</h4>
-      <h6>color:{props.color}</h6>
+      <h1>Name:{props.name}</h1>
+      <h3>price:{props.price}</h3>
+      <h2>color: <span style={{color:'white', }}>{props.color}</span></h2>
     </div>
   )
 }
